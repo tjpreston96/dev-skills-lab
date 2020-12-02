@@ -9,7 +9,7 @@ const skills = [
 
   module.exports = {
     getAll,
-    // getOne,
+    getOne
     // create,
     // deleteOne,
     // update
@@ -17,4 +17,8 @@ const skills = [
 
   function getAll() {
       return skills
-  }
+  };
+
+  function getOne(id) {
+      return skills.find(skill => skill.id === parseInt(id));
+  };
