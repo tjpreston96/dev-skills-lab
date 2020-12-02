@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
     <h1>Skills <%= time %> </h1>
     <ul>
         <% skills.forEach((s) => { %> 
             <li>
+                <form action="/skills/<%= s.id %>?_method=DELETE" class="delete-form" method="POST"> 
+                    <button type="submit">x</button>   
+                </form>
                 <a href="/skills/<%= s.id %>"><%= s.skill %></a>
                 -
                 <%= s.done ? 'done' : 'not done' %> 
